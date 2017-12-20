@@ -62,27 +62,6 @@ router.post('/authenticate', function(req, res){
     })
 })
 
-//register a new tokenet
-router.get('/token', function(req, res){
-    var token = jswt.sign({username: 'a do'}, 'supersecret', {expiresIn: 120});
-    res.send(token)
-})
-
-router.post('/login', (req,res)=>{
-    var message;
-    for(var i=0; i<=User; i++){
-        if(User.name !=req.body.name){
-            message = 'wrong name'
-        } else{
-            if( User.password !=req.body.password){
-                message='wrong password';
-                break;
-            } else{
-                message="login Successful"
-            }
-        }
-    }
-})
 
 
 module.exports = router
