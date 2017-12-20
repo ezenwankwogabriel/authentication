@@ -1,0 +1,21 @@
+{
+  "name": "crud-backend",
+  "version": "1.0.0",
+  "description": "simple backend server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Ezenwankwo",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.7",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.7"
+  }
+}
