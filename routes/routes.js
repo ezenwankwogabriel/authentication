@@ -2,10 +2,6 @@ var express = require('express');
 var router = express.Router();
 var jswt = require('jsonwebtoken');
 
-
-
-
-
 const User = require('../model/users')
 
 router.get('/', function(req, res){
@@ -14,7 +10,27 @@ router.get('/', function(req, res){
 
 router.get('/users', function(req, res){
     User.find({}, function(err, users){
-        res.json(users);
+        if(err){
+            res.json(err);
+        }else{res.json(users);
+        console.log('hello')}
+        
+    })
+})
+
+router.post('/users', function(req, res){
+    let newUser = new User({
+        name: req.body.name,
+        password: req.body.password,
+        admin: req.body.admin 
+    })
+    newUser.save(function(err, user){
+        if(err){
+            res.json(err);
+        }else{
+            res.json({mssg: 'Users added successfully'})
+            console.log(great)
+        }
     })
 })
 

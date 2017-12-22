@@ -19,7 +19,6 @@ const route = require("./routes/routes");
 
 //connect to mongoose
 mongoose.connect('mongodb://localhost:27017/authenticate');
-// mongoose.connect('mongodb://gabangel:Melancholy1@ds159676.mlab.com:59676/vueshoppinglist');
 
 //verify on connection
 mongoose.connection.on( 'connected', ()=>{
@@ -42,22 +41,9 @@ app.use(bodyParser.json());
 app.use("/api", route);
 app.set('superSecret', config.secret);
 
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('*', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'public/index.html'))
-})
-
-
-app.get("/", function(req, res, next){
-    res.send("go hoome")
-})
-
-
-
 
 //specify port server is running
-const PORT = process.env.PORT || 8080;
+const PORT = 3000;
 app.listen( PORT, (error, body)=>{
     console.log("server has been started at port: " + PORT);
 })
