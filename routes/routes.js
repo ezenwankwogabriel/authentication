@@ -13,7 +13,6 @@ router.get('/users', function(req, res){
         if(err){
             res.json(err);
         }else{res.json(users);
-        console.log('hello')}
         
     })
 })
@@ -29,7 +28,6 @@ router.post('/users', function(req, res){
             res.json(err);
         }else{
             res.json({mssg: 'Users added successfully'})
-            console.log(great)
         }
     })
 })
